@@ -1,0 +1,17 @@
+﻿@using LabWeb13.Generator
+@model LabWeb13.Models.ResultViewModel
+
+@{
+    ViewData["Title"] = "Result";
+    Layout = "_Layout";
+}
+
+<h1>Quiz Results</h1>
+
+<h2>Right answers @Model.CorrectAnswersAmount out @Model.AnswersAmount</h2>
+<ol>
+    @foreach (KeyValuePair<Question, int> ans in Model.Data)
+    {
+        <li>@ans.Key.ConvertToString() = @ans.Value</li>
+    }
+</ol>
